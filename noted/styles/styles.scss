@@ -1,0 +1,18 @@
+@import "./variables";
+@import "card.scss";
+
+html, body, #app, #app>div {
+    height: 100%
+  }
+  
+nav {
+    display: flex;
+    justify-content: center;
+    font-family: $font-stack;
+    color: $primary-color;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}

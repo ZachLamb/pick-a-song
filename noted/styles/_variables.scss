@@ -1,4 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;0,800;1,600;1,700;1,800&display=swap');
+// Typography
+@font-face {
+    font-family: "Open Sans", sans-serif;
+    src: url("/fonts/Open_Sans/OpenSans-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-size: normal;
+  }
+  
+  @font-face {
+    font-family: "Open Sans", sans-serif;
+    src: url("/fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Open Sans", sans-serif;
+    src: url("/fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Open Sans", sans-serif;
+    src: url("/fonts/Open_Sans/OpenSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
 
 // colors
 $primary-color: #3988C4;

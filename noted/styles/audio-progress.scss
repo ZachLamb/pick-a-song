@@ -1,0 +1,32 @@
+@import "./variables";
+
+.progress {
+    display: flex;
+    align-content: stretch;
+    padding: 0 0 2% 0;
+
+    .progress-bar {
+        position: relative;
+        height: 1vh;
+        width: 300px;
+        border-radius: 50px;
+        background: rgba(white,.6);
+        .progress-filler {
+            background: rgba($accent-color,1);
+            height: 100%;
+            width: 20%;
+            border-radius: inherit;
+            transition: width .2s ease-in;
+            z-index: 10000;
+
+        }
+        .progress-circle {
+            height: 100%;
+            width: 3%;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+    
+}

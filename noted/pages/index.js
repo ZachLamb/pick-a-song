@@ -1,12 +1,43 @@
 import Head from "next/head";
 
-
 import Card from "../components/card";
 
 import "../styles/styles.scss";
 
-export default function Home() {
+const mockData = [
+  {
+    artist: "Dua Lipa",
+    song: "Cool",
+    genre: "Pop",
+    albumArt: "/assets/images/dualipa.jpg",
+  },
+  {
+    artist: "Dua Lipa",
+    song: "Cool",
+    genre: "Pop",
+    albumArt: "/assets/images/dualipa.jpg",
+  },
+  {
+    artist: "Dua Lipa",
+    song: "Cool",
+    genre: "Pop",
+    albumArt: "/assets/images/dualipa.jpg",
+  },
+  {
+    artist: "Dua Lipa",
+    song: "Cool",
+    genre: "Pop",
+    albumArt: "/assets/images/dualipa.jpg",
+  },
+  {
+    artist: "Dua Lipa",
+    song: "Cool",
+    genre: "Pop",
+    albumArt: "/assets/images/dualipa.jpg",
+  },
+]
 
+export default function Home() {
   return (
     <div className="container">
       <Head>
@@ -17,7 +48,18 @@ export default function Home() {
         <h1 className="title">Note'd</h1>
       </nav>
       <main>
-        <Card></Card>
+        <section className="cards">
+        {mockData.map((music,i) =>{
+          return(
+            <Card  
+            artist="Dua Lipa"
+            song="Cool"
+            genre="Pop"
+            albumArt="/assets/images/dualipa.jpg">
+            </Card>
+          )
+        })}
+        </section>
       </main>
     </div>
   );

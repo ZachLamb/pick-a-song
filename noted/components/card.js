@@ -67,7 +67,7 @@ export default function Card(props) {
   return (
     <motion.div
       style={{
-        backgroundImage: "url('/assets/images/dualipa.jpg')",
+        backgroundImage: `url("${props.albumArt}")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -88,9 +88,9 @@ export default function Card(props) {
     >
       <div className="card-container">
         <ul>
-          <li id="artist">Dua Lipa</li>
-          <li id="song">Cool</li>
-          <li id="genre">Pop</li>
+          <li id="artist">{props.artist}</li>
+          <li id="song">{props.song}</li>
+          <li id="genre">{props.genre}</li>
         </ul>
           <ProgressBar></ProgressBar>
         <div className="card-btn-group">

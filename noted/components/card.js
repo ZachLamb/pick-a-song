@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   motion,
   useMotionValue,
@@ -13,6 +13,8 @@ import PlaySVG from "./play";
 import ProgressBar from "./progress-bar";
 
 export default function Card(props) {
+  const [hideCard, setHideCard] = useState("");
+  
   let animation = useAnimation();
 
   // Turn x and y into animatable values
@@ -50,6 +52,7 @@ export default function Card(props) {
         transition: { duration: 0.2 },
         transform: `rotate(40deg)`,
       });
+      setHideCard("hide");
     }
 
     // If dragged past a certain point to the left, stop tracking the x and y positions
@@ -62,6 +65,7 @@ export default function Card(props) {
         transition: { duration: 0.2 },
         transform: `rotate(-40deg)`,
       });
+      setHideCard("hide")
     }
   }
   return (
@@ -70,13 +74,14 @@ export default function Card(props) {
         backgroundImage: `url("${props.albumArt}")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        zIndex: props.priority
       }}
       drag="x"
       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-      // whileHover={{ scale: 1.1 }}
-      // whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
       onDragEnd={handleDragEnd}
-      className="card"
+      className={"card " + hideCard }
       // Set the x and y values to a value that is animatable
       x={x}
       y={y}

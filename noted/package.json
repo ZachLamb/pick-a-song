@@ -8,15 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
     "@fortawesome/react-fontawesome": "^0.1.10",
     "@zeit/next-sass": "^1.0.1",
+    "apollo-boost": "^0.4.9",
+    "apollo-link-ws": "^1.0.20",
     "framer-motion": "^1.11.0",
+    "graphql": "^15.3.0",
     "next": "9.4.4",
     "next-images": "^1.4.0",
     "nextjs-fonts": "^0.22.0",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "subscriptions-transport-ws": "^0.9.17"
   },
   "devDependencies": {
     "cypress": "^4.8.0"

@@ -13,25 +13,25 @@ const mockData = [
   },
   {
     artist: "Dua Lipa",
-    song: "Cool",
+    song: "Physical",
     genre: "Pop",
     albumArt: "/assets/images/dualipa.jpg",
   },
   {
     artist: "Dua Lipa",
-    song: "Cool",
+    song: "Break My Heart",
     genre: "Pop",
     albumArt: "/assets/images/dualipa.jpg",
   },
   {
     artist: "Dua Lipa",
-    song: "Cool",
+    song: "Levitating",
     genre: "Pop",
     albumArt: "/assets/images/dualipa.jpg",
   },
   {
     artist: "Dua Lipa",
-    song: "Cool",
+    song: "Don't Start Now",
     genre: "Pop",
     albumArt: "/assets/images/dualipa.jpg",
   },
@@ -50,12 +50,15 @@ export default function Home() {
       <main>
         <section className="cards">
         {mockData.map((music,i) =>{
+          const zIndex = (i+1)*100;
           return(
             <Card  
-            artist="Dua Lipa"
-            song="Cool"
-            genre="Pop"
-            albumArt="/assets/images/dualipa.jpg">
+            artist={music.artist}
+            song={music.song}
+            genre={music.genre}
+            albumArt="/assets/images/dualipa.jpg"
+            key={i}
+            priority={zIndex}>
             </Card>
           )
         })}

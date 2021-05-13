@@ -1,8 +1,7 @@
 import Head from "next/head";
 
 import Card from "../components/card";
-
-import "../styles/styles.scss";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 const mockData = [
   {
@@ -35,9 +34,11 @@ const mockData = [
     genre: "Pop",
     albumArt: "/assets/images/dualipa.jpg",
   },
-]
+];
 
 export default function Home() {
+  const [session, loading] = useSession();
+
   return (
     <div className="container">
       <Head>
@@ -48,18 +49,28 @@ export default function Home() {
         <h1 className="title">Note'd</h1>
       </nav>
       <main>
-        <section className="cards">
-        {mockData.map((music,i) =>{
-          return(
-            <Card  
-            artist="Dua Lipa"
-            song="Cool"
-            genre="Pop"
-            albumArt="/assets/images/dualipa.jpg">
-            </Card>
-          )
-        })}
-        </section>
+        {!session && (
+          <>
+            Not signed in <br />
+            <button onClick={signIn}>Sign In</button>
+          </>
+        )}
+        {session && (
+          <>
+            <section className="cards">
+              {mockData.map((music, i) => {
+                return (
+                  <Card
+                    artist={music.artist}
+                    song={music.song}
+                    genre={music.genre}
+                    albumArt={music.albumArt}
+                  ></Card>
+                );
+              })}
+            </section>
+          </>
+        )}
       </main>
     </div>
   );

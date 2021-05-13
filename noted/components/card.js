@@ -6,7 +6,6 @@ import {
   useAnimation,
 } from "framer-motion";
 
-import "../styles/styles.scss";
 import CheckMarkSVG from "./check-mark";
 import CancelSVG from "./cancel";
 import PlaySVG from "./play";
@@ -38,7 +37,6 @@ export default function Card(props) {
       window.innerWidth || 0
     );
     const halfway = vw / 8;
-    console.log(halfway);
 
     // If dragged past a certain point to the right, stop tracking the x and y positions
     // Animate the card to fly to the right
@@ -50,6 +48,7 @@ export default function Card(props) {
         transition: { duration: 0.2 },
         transform: `rotate(40deg)`,
       });
+      // animation.style({display: none;});
     }
 
     // If dragged past a certain point to the left, stop tracking the x and y positions

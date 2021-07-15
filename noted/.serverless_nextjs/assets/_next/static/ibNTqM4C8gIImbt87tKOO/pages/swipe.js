@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{IMET:function(n,o,u){"use strict";u.r(o),u.d(o,"__N_SSP",(function(){return i}));var i=!0;o.default=function(n){n.data}},oyWu:function(n,o,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/swipe",function(){return u("IMET")}])}},[["oyWu",0]]]);

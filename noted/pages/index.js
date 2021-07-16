@@ -38,22 +38,22 @@ const mockData = [
   },
 ];
 
-export async function getServerSideProps() {
-  const { data } = await client.query({
-    query: gql`
-      query Luke {
-      person @rest(type: "Person", path: "people/1/") {
-        name
-    }
-  }`,
-  });
+// export async function getServerSideProps() {
+//   const { data } = await client.query({
+//     query: gql`
+//       query MyPlaylists {
+//       playlist @rest(type: "Playlists", path: "me/playlists") {
+//         name
+//     }
+//   }`,
+//   });
 
-  return {
-    props: {
-      countries: data,
-    },
- };
-}
+//   return {
+//     props: {
+//       countries: data,
+//     },
+//  };
+// }
 
 export default function Home() {
   const [session, loading] = useSession();

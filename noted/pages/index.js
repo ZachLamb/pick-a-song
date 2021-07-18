@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
 import Card from "../components/card";
-import { signIn, signOut, useSession } from "next-auth/client";
+import { signIn, getSession, useSession } from "next-auth/client";
 
 const mockData = [
   {
@@ -38,22 +38,32 @@ const mockData = [
   },
 ];
 
-// export async function getServerSideProps() {
-//   const { data } = await client.query({
-//     query: gql`
-//       query MyPlaylists {
-//       playlist @rest(type: "Playlists", path: "me/playlists") {
-//         name
-//     }
-//   }`,
-//   });
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
 
-//   return {
-//     props: {
-//       countries: data,
-//     },
-//  };
-// }
+  const data = {}
+  // await client.query({
+  // //   query: gql`
+  // //     query MyPlaylists {
+  // //     playlist @rest(type: "Playlists", path: "me/playlists") {
+  // //       name
+  // //   }
+  // // }`,
+  // query: gql`
+  // query statusQuery {
+  //   status @rest(type: "Status", path: "/") {
+  //     status
+  //   }
+  // }`
+  // });
+
+  return {
+    props: {
+      session: session,
+      playlists: data,
+    },
+ };
+}
 
 export default function Home() {
   const [session, loading] = useSession();
